@@ -317,7 +317,7 @@ export default function Home() {
 							>
 								<Image
 									src={"/borrow-graphic-rVBP-6fQ.png"}
-									className="rounded-b-2xl"
+									className="rounded-b-2xl h-full"
 									width={522}
 									height={424}
 									alt=""
@@ -334,7 +334,7 @@ export default function Home() {
 							<div className="bg-no-repeat bg-cover rounded-l-2xl hidden lg:block">
 								<Image
 									src={"/growbtc-graphic-BYwcQB4p.png"}
-									className="rounded-l-2xl"
+									className="rounded-l-2xl h-full"
 									width={522}
 									height={424}
 									alt=""
@@ -373,7 +373,7 @@ export default function Home() {
 							>
 								<Image
 									src={"/growbtc-graphic-BYwcQB4p.png"}
-									className="rounded-b-2xl"
+									className="rounded-b-2xl h-full"
 									width={522}
 									height={424}
 									alt=""
@@ -421,7 +421,7 @@ export default function Home() {
 						>
 							<Image
 								src={"/stability-graphic-CaEoUcmV.png"}
-								className="rounded-b-2xl lg:hidden"
+								className="rounded-b-2xl h-full"
 								width={504}
 								height={424}
 								alt=""
