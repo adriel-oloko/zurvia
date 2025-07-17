@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+	--font-inter: var(--font-inter);
+	--font-ibm_plex_sans: var(--font-ibm_plex_sans);
+	--font-funnel_display: var(--font-funnel_display);
+
+	--color-zurvia-yellow: #f8ecd4;
+	--color-primary-red: #ff004d;
+	--color-default-text: #1a202c;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: #fff;
+	color: var(--color-default-text);
+}
+
+header {
+	background-image: url("../../public/gradient-bg-GgcszqHZ.png");
+	background-size: cover;
+	background-position: center;
+}
+
+.gcOsYZMtRU {
+	background-image: url("../../public/maze-background-DNA5qxlH.png");
+}
+
+.bccekOxcUE {
+	background: url("../../public/newsletter-background-DO6MO7Jf.png") center
+		bottom / cover rgb(174, 223, 255);
+}
+
+.lhRsrdTAPN:nth-of-type(2) .kCRgdatDLn {
+	margin-bottom: 2rem;
+}
+
+header section .ju367v9i,
+header section .ju367v9j:hover,
+header section .ju367v9k:active {
+	background: #00000010 !important;
+	border: 3px solid #000 !important;
+	height: 100% !important;
+	padding: 0px 8px !important;
+	width: 100% !important;
+	text-align: center !important;
+}
+header section .ju367vf3,
+header section .ju367vf4:hover,
+header section .ju367vf5:active {
+	color: #000 !important;
+	text-align: center !important;
+}
+
+header section .ju367vn {
+	border-radius: 6px !important;
+}
+header section .iekbcc0 {
+	font-size: 16px;
+	font-weight: 600 !important;
+}
+
+nav button.iekbcc0 {
+	background-color: #000 !important;
+	color: #fff !important;
+    height: 40px !important;
+}
+
+
+@media (min-width: 1024px) {
+	header {
+		background-size: auto, cover;
+		background-position: 50% 0%, 0% 0%;
+	}
+    
+	.iekbcc0 {
+		font-size: 18px !important;
+		font-weight: 600 !important;
+	}
 }
