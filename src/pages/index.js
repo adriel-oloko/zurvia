@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { FaqCards, FooterSection, Loader } from "@/components/reusableBlocks";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { AnimatePresence, motion } from "motion/react";
 import { MobileNavSection } from "../components/navComponents";
@@ -16,7 +16,7 @@ export default function Home() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isChildVisible, setIsChildVisible] = useState([false, false, false]);
 	const [faqIndex, setFaqIndex] = useState(null);
-	const [isClient, setIsClient] = useState(false);
+	const [isClient, setIsClient] = useState(true);
 
 	const [mobileNav, setMobileNav] = useState(false);
 
@@ -64,15 +64,11 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		setIsClient(true);
-		setTimeout(() => {
-			setIsLoading(false);
-		}, 8000);
+		setIsLoading(false);
 	}, []);
 
 	return (
 		<>
-			{" "}
 			{isLoading ? (
 				<Loader />
 			) : (
@@ -144,8 +140,7 @@ export default function Home() {
 											? setMobileNav(false)
 											: setMobileNav(true)
 									}
-									className="lg:hidden"
-								>
+									className="lg:hidden">
 									{mobileNav ? (
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -153,8 +148,7 @@ export default function Home() {
 											viewBox="0 -960 960 960"
 											width="32px"
 											fill="000"
-											className="relative top-1"
-										>
+											className="relative top-1">
 											<path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
 										</svg>
 									) : (
@@ -164,8 +158,7 @@ export default function Home() {
 											viewBox="0 -960 960 960"
 											width="32px"
 											fill="#000"
-											className="relative top-1"
-										>
+											className="relative top-1">
 											<path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z" />
 										</svg>
 									)}
@@ -184,16 +177,14 @@ export default function Home() {
 									variants={heroIconAnimationVariants(0.6)}
 									initial="initial"
 									animate="animate"
-									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md top-0 inset-x-0 mx-auto"
-								>
+									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md top-0 inset-x-0 mx-auto">
 									<ShieldCheck />
 								</motion.div>
 								<motion.div
 									variants={heroIconAnimationVariants(0.8)}
 									initial="initial"
 									animate="animate"
-									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md top-0 inset-x-0 mx-auto"
-								>
+									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md top-0 inset-x-0 mx-auto">
 									<RefreshCw />
 								</motion.div>
 							</div>
@@ -203,16 +194,14 @@ export default function Home() {
 									variants={heroIconAnimationVariants(0.4)}
 									initial="initial"
 									animate="animate"
-									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md"
-								>
+									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md">
 									<Zap />
 								</motion.div>
 								<motion.div
 									variants={heroIconAnimationVariants(1.0)}
 									initial="initial"
 									animate="animate"
-									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md"
-								>
+									className="size-10 bg-white rounded-lg flex items-center justify-center shadow-md">
 									<WandSparkles />
 								</motion.div>
 							</div>
@@ -220,14 +209,12 @@ export default function Home() {
 
 						<section
 							onClick={isClient ? screenTap : undefined}
-							className="text-center flex flex-col gap-4 items-center -mt-24 md:mt-24 relative"
-						>
+							className="text-center flex flex-col gap-4 items-center -mt-24 md:mt-24 relative">
 							<motion.p
 								variants={heroIconAnimationVariants(0.6)}
 								initial="initial"
 								animate="animate"
-								className="rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 font-medium font-inter shadow-md shadow-[#f7931a10]"
-							>
+								className="rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 font-medium font-inter shadow-md shadow-[#f7931a10]">
 								100% transparent
 							</motion.p>
 							<motion.h1
@@ -236,8 +223,7 @@ export default function Home() {
 								animate="animate"
 								className={
 									"font-sans bg-linear-to-r from-white via-black to-white text-transparent bg-clip-text text-4xl lg:text-5xl xl:text-6xl lg:px-24 lg:w-4/5 mx-auto font-bold relative z-10"
-								}
-							>
+								}>
 								Discover the financial uplifiting power of{" "}
 								<br />
 								<span className="px-6 py-2 text-white border-solid bg-[#f7931a] backdrop-blur-3xl relative -z-0 mt-0.75 inline-block">
@@ -248,16 +234,14 @@ export default function Home() {
 								variants={heroIconAnimationVariants(1.0)}
 								initial="initial"
 								animate="animate"
-								className="text-default-text text-xl"
-							>
+								className="text-default-text text-xl">
 								Bring everyday finance to your portfolio
 							</motion.p>
 							<motion.section
 								variants={heroIconAnimationVariants(0.6)}
 								initial="initial"
 								animate="animate"
-								className="grid grid-cols-2 w-fit gap-2"
-							>
+								className="grid grid-cols-2 w-fit gap-2">
 								<button className="bg-black/95 px-4 py-2 rounded-md font-semibold text-white lg:text-lg lg:px-6 hover:bg-black hover:scale-105 hover:shadow shadow-black transition-all">
 									Explore Zurvia
 								</button>
@@ -271,15 +255,13 @@ export default function Home() {
 						transition={{ type: "spring", bounce: 0.25 }}
 						whileInView={{ y: 0 }}
 						viewport={{ once: true, amount: 0 }}
-						className="bg-white rounded-t-3xl px-6 py-10 lg:py-16 lg:px-8 -mt-6 relative"
-					>
+						className="bg-white rounded-t-3xl px-6 py-10 lg:py-16 lg:px-8 -mt-6 relative">
 						<motion.p
 							initial={{ y: 60, opacity: 0 }}
 							transition={{ type: "spring", bounce: 0.25 }}
 							whileInView={{ y: 0, opacity: 1 }}
 							viewport={{ once: true, amount: 0.25 }}
-							className="text-default-text text-2xl lg:text-3xl font-medium lg:w-1/2 mx-auto text-center lg:pb-6"
-						>
+							className="text-default-text text-2xl lg:text-3xl font-medium lg:w-1/2 mx-auto text-center lg:pb-6">
 							Zurvia is the DeFi finance app that empowers you to
 							live off of DeFi, without selling it.
 						</motion.p>
@@ -294,8 +276,7 @@ export default function Home() {
 									}}
 									whileInView={{ y: 0, opacity: 1 }}
 									viewport={{ once: true, amount: 0.25 }}
-									className="bg-zurvia-yellow grid lg:grid-cols-2 rounded-2xl"
-								>
+									className="bg-zurvia-yellow grid lg:grid-cols-2 rounded-2xl">
 									<div className="flex flex-col gap-2 p-6 pt-8 lg:p-12">
 										<h2 className="text-3xl text-default-text font-medium lg:text-4xl font-ibm_plex_sans">
 											Borrow with DeFi
@@ -308,8 +289,7 @@ export default function Home() {
 
 										<Link
 											href={"#"}
-											className="text-default-text font-semibold flex gap-2 mt-4"
-										>
+											className="text-default-text font-semibold flex gap-2 mt-4">
 											Unlock Credit{" "}
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -317,18 +297,18 @@ export default function Home() {
 												viewBox="0 -960 960 960"
 												width="20px"
 												fill="#000"
-												className="relative top-0.5"
-											>
+												className="relative top-0.5">
 												<path d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z" />
 											</svg>
 										</Link>
 									</div>
 									<div
 										id="borrow-graphic-rVBP-6fQ"
-										className="bg-no-repeat bg-cover rounded-b-2xl"
-									>
+										className="bg-no-repeat bg-cover rounded-b-2xl">
 										<Image
-											src={"/borrow-graphic-rVBP-6fQ.webp"}
+											src={
+												"/borrow-graphic-rVBP-6fQ.webp"
+											}
 											className="rounded-b-2xl h-full"
 											width={522}
 											height={424}
@@ -344,8 +324,7 @@ export default function Home() {
 										bounce: 0.25,
 									}}
 									whileInView={{ y: 0 }}
-									className="bg-[#eff3db] grid lg:grid-cols-2 rounded-2xl"
-								>
+									className="bg-[#eff3db] grid lg:grid-cols-2 rounded-2xl">
 									<div className="bg-no-repeat bg-cover rounded-l-2xl hidden lg:block">
 										<Image
 											src={
@@ -369,8 +348,7 @@ export default function Home() {
 
 										<Link
 											href={"#"}
-											className="text-default-text font-semibold flex gap-2 mt-4"
-										>
+											className="text-default-text font-semibold flex gap-2 mt-4">
 											Start Earning{" "}
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -378,16 +356,14 @@ export default function Home() {
 												viewBox="0 -960 960 960"
 												width="20px"
 												fill="#000"
-												className="relative top-0.5"
-											>
+												className="relative top-0.5">
 												<path d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z" />
 											</svg>
 										</Link>
 									</div>
 									<div
 										id="growbtc-graphic-BYwcQB4p"
-										className="bg-no-repeat bg-cover rounded-b-2xl lg:hidden"
-									>
+										className="bg-no-repeat bg-cover rounded-b-2xl lg:hidden">
 										<Image
 											src={
 												"/growbtc-graphic-BYwcQB4p.webp"
@@ -405,8 +381,7 @@ export default function Home() {
 								initial={{ y: 60 }}
 								transition={{ type: "spring", bounce: 0.25 }}
 								whileInView={{ y: 0 }}
-								className="bg-[#FAE2DF] flex flex-col rounded-2xl lg:w-1/3 h-auto"
-							>
+								className="bg-[#FAE2DF] flex flex-col rounded-2xl lg:w-1/3 h-auto">
 								<div className="flex flex-col gap-2 p-6 pt-8 lg:p-12">
 									<h2 className="text-3xl text-default-text font-medium lg:text-4xl font-ibm_plex_sans">
 										Stability Backed By DeFi
@@ -419,8 +394,7 @@ export default function Home() {
 
 									<Link
 										href={"#"}
-										className="text-default-text font-semibold flex gap-2 mt-4"
-									>
+										className="text-default-text font-semibold flex gap-2 mt-4">
 										Learn More{" "}
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -428,16 +402,14 @@ export default function Home() {
 											viewBox="0 -960 960 960"
 											width="20px"
 											fill="#000"
-											className="relative top-0.5"
-										>
+											className="relative top-0.5">
 											<path d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z" />
 										</svg>
 									</Link>
 								</div>
 								<div
 									id="stability-graphic-CaEoUcmV"
-									className="bg-no-repeat bg-cover rounded-b-2xl h-full bg-center"
-								>
+									className="bg-no-repeat bg-cover rounded-b-2xl h-full bg-center">
 									<Image
 										src={"/stability-graphic-CaEoUcmV.webp"}
 										className="rounded-b-2xl h-full"
@@ -454,14 +426,12 @@ export default function Home() {
 						initial={{ y: 60 }}
 						transition={{ type: "spring", bounce: 0.25 }}
 						whileInView={{ y: 0 }}
-						className="bg-[#f4f0ed] p-6 lg:py-12 flex flex-col gap-6 items-center"
-					>
+						className="bg-[#f4f0ed] p-6 lg:py-12 flex flex-col gap-6 items-center">
 						<motion.h2
 							initial={{ y: 30 }}
 							transition={{ type: "spring", bounce: 0.25 }}
 							whileInView={{ y: 0 }}
-							className="text-[#FF004D] font-ibm_plex_sans font-medium text-3xl lg:text-4xl text-center"
-						>
+							className="text-[#FF004D] font-ibm_plex_sans font-medium text-3xl lg:text-4xl text-center">
 							Ready for the DeFi Age
 						</motion.h2>
 
@@ -469,16 +439,14 @@ export default function Home() {
 							initial={{ y: 30 }}
 							transition={{ type: "spring", bounce: 0.25 }}
 							whileInView={{ y: 0 }}
-							className="flex flex-wrap items-center justify-center w-full gap-4"
-						>
+							className="flex flex-wrap items-center justify-center w-full gap-4">
 							<p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									height="24px"
 									viewBox="0 -960 960 960"
 									width="24px"
-									fill="#ff004d"
-								>
+									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
 								</svg>{" "}
 								permissionless
@@ -489,8 +457,7 @@ export default function Home() {
 									height="24px"
 									viewBox="0 -960 960 960"
 									width="24px"
-									fill="#ff004d"
-								>
+									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
 								</svg>{" "}
 								Bank-free
@@ -501,8 +468,7 @@ export default function Home() {
 									height="24px"
 									viewBox="0 -960 960 960"
 									width="24px"
-									fill="#ff004d"
-								>
+									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
 								</svg>{" "}
 								Intuitive
@@ -513,8 +479,7 @@ export default function Home() {
 									height="24px"
 									viewBox="0 -960 960 960"
 									width="24px"
-									fill="#ff004d"
-								>
+									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
 								</svg>{" "}
 								Secure
@@ -525,8 +490,7 @@ export default function Home() {
 									height="24px"
 									viewBox="0 -960 960 960"
 									width="24px"
-									fill="#ff004d"
-								>
+									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
 								</svg>{" "}
 								Decentralized
@@ -624,8 +588,8 @@ export default function Home() {
 										This is where your DeFi gets busy. Earn
 										yield, vote on Zurvia&apos;s future, add
 										liquidity, and much more, all from one
-										place. It&apos;s your home base for using
-										DeFi, not just holding it.
+										place. It&apos;s your home base for
+										using DeFi, not just holding it.
 									</p>
 								</div>
 							</div>
@@ -653,16 +617,14 @@ export default function Home() {
 						initial={{ y: 60 }}
 						transition={{ type: "spring", bounce: 0.25 }}
 						whileInView={{ y: 0 }}
-						className="bg-white px-6 lg:px-0 py-8"
-					>
+						className="bg-white px-6 lg:px-0 py-8">
 						<div className="px-6 pt-12 pb-80 rounded-3xl w-full bg-no-repeat text-center gcOsYZMtRU lg:px-24 lg:pt-12 bg-cover bg-center flex flex-col gap-4">
 							<motion.h3
 								initial={{ y: 30, opacity: 0 }}
 								transition={{ type: "spring", bounce: 0.25 }}
 								whileInView={{ y: 0, opacity: 1 }}
 								viewport={{ once: true, amount: 1 }}
-								className="font-ibm_plex_sans text-4xl text-default-text font-medium"
-							>
+								className="font-ibm_plex_sans text-4xl text-default-text font-medium">
 								Experience Freedom
 							</motion.h3>
 							<motion.p
@@ -670,8 +632,7 @@ export default function Home() {
 								transition={{ type: "spring", bounce: 0.25 }}
 								whileInView={{ y: 0, opacity: 1 }}
 								viewport={{ once: true, amount: 1 }}
-								className="text-center text-[#014a7a]"
-							>
+								className="text-center text-[#014a7a]">
 								Borrow, earn, and spend without selling a single
 								sat. <br />
 								No banks. No middlemen. <br />
@@ -683,8 +644,7 @@ export default function Home() {
 								whileInView={{ y: 0, opacity: 1 }}
 								viewport={{ once: true, amount: 1 }}
 								type="button"
-								className="rounded-2xl bg-black/95 text-white px-6 py-3 w-fit mx-auto text-lg font-medium hover:bg-black hover:scale-105 hover:shadow shadow-black transition-[scale,shadow,bg]"
-							>
+								className="rounded-2xl bg-black/95 text-white px-6 py-3 w-fit mx-auto text-lg font-medium hover:bg-black hover:scale-105 hover:shadow shadow-black transition-[scale,shadow,bg]">
 								Get Started
 							</motion.button>
 						</div>
@@ -695,8 +655,7 @@ export default function Home() {
 						transition={{ type: "spring", bounce: 0.25 }}
 						whileInView={{ y: 0 }}
 						viewport={{ once: true, amount: 1 }}
-						className="bg-white px-6 lg:pb-60 xl:px-16"
-					>
+						className="bg-white px-6 lg:pb-60 xl:px-16">
 						<Image
 							src={"/faq-title-CNIoR6mx.svg"}
 							className="scale-110"
@@ -726,8 +685,7 @@ export default function Home() {
 						transition={{ type: "spring", bounce: 0.25 }}
 						whileInView={{ y: 0 }}
 						viewport={{ once: true, amount: 1 }}
-						className="bccekOxcUE p-10 pb-0 flex flex-col lg:flex-row-reverse lg:gap-5 lg:pr-20"
-					>
+						className="bccekOxcUE p-10 pb-0 flex flex-col lg:flex-row-reverse lg:gap-5 lg:pr-20">
 						<div className="flex flex-col gap-6 mb-24 lg:mb-0 lg:justify-end lg:pb-10">
 							<p className="font-ibm_plex_sans font-semibold text-4xl lg:text-[52px]">
 								Shake up your inbox
@@ -764,8 +722,7 @@ export default function Home() {
 							initial={{ y: 60 }}
 							transition={{ type: "spring", bounce: 0.25 }}
 							whileInView={{ y: 0 }}
-							className="flex flex-col lg:flex-row gap-4 lg:gap-x-20 justify-between"
-						>
+							className="flex flex-col lg:flex-row gap-4 lg:gap-x-20 justify-between">
 							<div className="lg:w-1/2 flex flex-col gap-4 lg:gap-8">
 								<Image
 									src={"/logo_bw.svg"}
@@ -838,8 +795,7 @@ export default function Home() {
 							initial={{ y: 60 }}
 							transition={{ type: "spring", bounce: 0.25 }}
 							whileInView={{ y: 0 }}
-							className="py-8 border-y border-[#3f3f3f] flex justify-between items-center text-lg text-white/80 mt-8"
-						>
+							className="py-8 border-y border-[#3f3f3f] flex justify-between items-center text-lg text-white/80 mt-8">
 							<p className="">© 2025 Zurvia</p>
 							<div className="flex gap-4">
 								<Link href={"#"}>Terms</Link>
