@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Image from "next/image";
+import { FaqCards } from "./reusableBlocks";
 
 export default function FAQs() {
 	const faqs = [
