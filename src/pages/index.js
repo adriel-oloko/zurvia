@@ -328,7 +328,7 @@ export default function Home() {
 										className="bg-no-repeat bg-cover rounded-b-2xl"
 									>
 										<Image
-											src={"/borrow-graphic-rVBP-6fQ.png"}
+											src={"/borrow-graphic-rVBP-6fQ.webp"}
 											className="rounded-b-2xl h-full"
 											width={522}
 											height={424}
@@ -349,7 +349,7 @@ export default function Home() {
 									<div className="bg-no-repeat bg-cover rounded-l-2xl hidden lg:block">
 										<Image
 											src={
-												"/growbtc-graphic-BYwcQB4p.png"
+												"/growbtc-graphic-BYwcQB4p.webp"
 											}
 											className="rounded-l-2xl h-full"
 											width={522}
@@ -390,7 +390,7 @@ export default function Home() {
 									>
 										<Image
 											src={
-												"/growbtc-graphic-BYwcQB4p.png"
+												"/growbtc-graphic-BYwcQB4p.webp"
 											}
 											className="rounded-b-2xl h-full"
 											width={522}
@@ -439,7 +439,7 @@ export default function Home() {
 									className="bg-no-repeat bg-cover rounded-b-2xl h-full bg-center"
 								>
 									<Image
-										src={"/stability-graphic-CaEoUcmV.png"}
+										src={"/stability-graphic-CaEoUcmV.webp"}
 										className="rounded-b-2xl h-full"
 										width={504}
 										height={424}
@@ -547,7 +547,7 @@ export default function Home() {
 									}}
 									whileInView={{ y: 0, scale: 1, opacity: 1 }}
 									src={
-										"/0b8e4a2d3f5381c45e0c547e74bc71e37be05fbb-1870x1232.png"
+										"/0b8e4a2d3f5381c45e0c547e74bc71e37be05fbb-1870x1232.webp"
 									}
 									className="lg:w-3/5"
 									width={1820}
@@ -578,7 +578,7 @@ export default function Home() {
 									}}
 									whileInView={{ y: 0, scale: 1, opacity: 1 }}
 									src={
-										"/d4907bf8e0b4b724aa1d65948603f3b18f702ef9-1870x1216.png"
+										"/d4907bf8e0b4b724aa1d65948603f3b18f702ef9-1870x1216.webp"
 									}
 									className="lg:w-3/5"
 									width={935}
@@ -609,7 +609,7 @@ export default function Home() {
 									}}
 									whileInView={{ y: 0, scale: 1, opacity: 1 }}
 									src={
-										"/abd75d0571f689d3375c568d5eedc4404324305d-2816x1852.png"
+										"/abd75d0571f689d3375c568d5eedc4404324305d-2816x1852.webp"
 									}
 									width={2816}
 									height={1852}
@@ -618,13 +618,13 @@ export default function Home() {
 								/>
 								<div className="flex flex-col gap-4">
 									<h3 className="text-primary-red text-2xl font-medium lg:text-4xl text-center font-ibm_plex_sans">
-										Explore to your DeFi’s desire.
+										Explore to your DeFi&apos;s desire.
 									</h3>
 									<p className="text-default-text font-ibm_plex_sans">
 										This is where your DeFi gets busy. Earn
-										yield, vote on Zurvia’s future, add
+										yield, vote on Zurvia&apos;s future, add
 										liquidity, and much more, all from one
-										place. It’s your home base for using
+										place. It&apos;s your home base for using
 										DeFi, not just holding it.
 									</p>
 								</div>
