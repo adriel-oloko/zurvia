@@ -1,8 +1,11 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { FaqCards } from "./reusableBlocks";
+import { useState } from "react";
 
 export default function FAQs() {
+        const [faqIndex, setFaqIndex] = useState(null);
+    
 	const faqs = [
 		{
 			question: "What is Zurvia?",

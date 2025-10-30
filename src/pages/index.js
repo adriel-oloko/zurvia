@@ -23,7 +23,6 @@ const Footer = dynamic(() => import("@/components/footer"), { ssr: false });
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isChildVisible, setIsChildVisible] = useState([false, false, false]);
-	const [faqIndex, setFaqIndex] = useState(null);
 	const [isClient, setIsClient] = useState(true);
 
 	const [mobileNav, setMobileNav] = useState(false);
