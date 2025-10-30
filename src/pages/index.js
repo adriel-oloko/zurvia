@@ -2,13 +2,12 @@
 /* eslint-disable react/no-children-prop */
 import { DesktopNavLink } from "@/components/navComponents";
 import Image from "next/image";
-import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { FaqCards, FooterSection, Loader } from "@/components/reusableBlocks";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Loader } from "@/components/reusableBlocks";
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { AnimatePresence, motion } from "motion/react";
-import { MobileNavSection } from "../components/navComponents";
+import { MobileNavSection } from "@/components/navComponents";
 
 import { WandSparkles, Zap, ShieldCheck, RefreshCw } from "lucide-react";
 
@@ -66,6 +65,7 @@ export default function Home() {
 			) : (
 				<>
 					<header className="p-6 min-h-[110vh] bg-no-repeat bg-cover relative flex flex-col justify-center items-center">
+                        <Image src={'/gradient-bg-GgcszqHZ.webp'} className="absolute inset-0 border-2 border-solid border-red-500 min-h-full object-cover" width={2298} height={993} alt="" />
 						<AnimatePresence initial={false}>
 							{mobileNav && <MobileNavSection />}
 						</AnimatePresence>
@@ -76,7 +76,7 @@ export default function Home() {
 								className="w-32 relative -top-0.5"
 								width={83}
 								height={24}
-								alt=""
+								alt="Logo"
 							/>
 
 							<div className="hidden lg:flex gap-4">
@@ -343,7 +343,7 @@ export default function Home() {
 									className="lg:w-3/5"
 									width={1820}
 									height={1232}
-									alt=""
+									alt="Zurvia Borrow User Interface"
 								/>
 								<div className="lg:w-2/5 flex flex-col gap-2 lg:gap-4 mt-4 lg:mt-0 justify-center">
 									<h3 className="text-primary-red text-2xl font-medium lg:text-4xl">
@@ -374,7 +374,7 @@ export default function Home() {
 									className="lg:w-3/5"
 									width={935}
 									height={608}
-									alt=""
+									alt="Zurvia profile user interface"
 								/>
 								<div className="lg:w-2/5 flex flex-col gap-2 lg:gap-4 mt-4 lg:mt-0 justify-center">
 									<h3 className="text-primary-red text-2xl font-medium lg:text-4xl">
@@ -405,7 +405,7 @@ export default function Home() {
 									width={2816}
 									height={1852}
 									className="px-4 lg:px-24"
-									alt=""
+									alt="zurvia explore user interface"
 								/>
 								<div className="flex flex-col gap-4">
 									<h3 className="text-primary-red text-2xl font-medium lg:text-4xl text-center font-ibm_plex_sans">
@@ -435,7 +435,7 @@ export default function Home() {
 								width={71}
 								height={24}
 								className="mx-6"
-								alt=""
+								alt="ledger"
 							/>
 						</Marquee>
 					</section>
@@ -445,13 +445,14 @@ export default function Home() {
 						transition={{ type: "spring", bounce: 0.25 }}
 						whileInView={{ y: 0 }}
 						className="bg-white px-6 lg:px-0 py-8">
-						<div className="px-6 pt-12 pb-80 rounded-3xl w-full bg-no-repeat text-center gcOsYZMtRU lg:px-24 lg:pt-12 bg-cover bg-center flex flex-col gap-4">
+						<div className="relative px-6 pt-12 pb-80 rounded-3xl w-full bg-no-repeat text-center lg:px-24 lg:pt-12 bg-cover bg-center flex flex-col gap-4">
+                            <Image src={"/maze-background-DNA5qxlH.webp"} className="absolute inset-0 h-full object-cover object-center rounded-3xl" width={1440} height={652} alt="" />
 							<motion.h3
 								initial={{ y: 30, opacity: 0 }}
 								transition={{ type: "spring", bounce: 0.25 }}
 								whileInView={{ y: 0, opacity: 1 }}
 								viewport={{ once: true, amount: 1 }}
-								className="font-ibm_plex_sans text-4xl text-default-text font-medium">
+								className="font-ibm_plex_sans text-4xl text-default-text font-medium relative z-10">
 								Experience Freedom
 							</motion.h3>
 							<motion.p
@@ -459,7 +460,7 @@ export default function Home() {
 								transition={{ type: "spring", bounce: 0.25 }}
 								whileInView={{ y: 0, opacity: 1 }}
 								viewport={{ once: true, amount: 1 }}
-								className="text-center text-[#014a7a]">
+								className="text-center text-[#014a7a] relative z-10">
 								Borrow, earn, and spend without selling a single
 								sat. <br />
 								No banks. No middlemen. <br />
@@ -471,7 +472,7 @@ export default function Home() {
 								whileInView={{ y: 0, opacity: 1 }}
 								viewport={{ once: true, amount: 1 }}
 								type="button"
-								className="rounded-2xl bg-black/95 text-white px-6 py-3 w-fit mx-auto text-lg font-medium hover:bg-black hover:scale-105 hover:shadow shadow-black transition-[scale,shadow,bg]">
+								className="relative z-10 rounded-2xl bg-black/95 text-white px-6 py-3 w-fit mx-auto text-lg font-medium hover:bg-black hover:scale-105 hover:shadow shadow-black transition-[scale,shadow,bg]">
 								Get Started
 							</motion.button>
 						</div>

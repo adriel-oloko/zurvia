@@ -62,7 +62,7 @@ export default function About() {
 							className="bg-no-repeat bg-cover rounded-b-2xl">
 							<Image
 								src={"/borrow-graphic-rVBP-6fQ.webp"}
-								className="rounded-b-2xl h-full"
+								className="rounded-b-2xl h-full lg:rounded-none lg:rounded-r-2xl"
 								width={522}
 								height={424}
 								alt=""

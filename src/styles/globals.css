@@ -31,16 +31,6 @@ body {
 	color: var(--color-default-text);
 }
 
-header {
-	background-image: url("../../public/gradient-bg-GgcszqHZ.webp");
-	background-size: cover;
-	background-position: center;
-}
-
-.gcOsYZMtRU {
-	background-image: url("../../public/maze-background-DNA5qxlH.webp");
-}
-
 .bccekOxcUE {
 	background: url("../../public/newsletter-background-DO6MO7Jf.webp") center
 		bottom / cover rgb(174, 223, 255);
