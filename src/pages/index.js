@@ -84,7 +84,7 @@ export default function Home() {
 
 						<nav className="flex justify-between items-center w-full absolute p-6 top-0 z-50">
 							<Image
-								src={"/Frame 50.svg"}
+								src={"/logo.svg"}
 								className="w-32 relative -top-0.5"
 								width={83}
 								height={24}
@@ -768,7 +768,7 @@ export default function Home() {
 						>
 							<div className="lg:w-1/2 flex flex-col gap-4 lg:gap-8">
 								<Image
-									src={"/Frame 51.svg"}
+									src={"/logo_bw.svg"}
 									className="w-40 -ml-2"
 									width={83}
 									height={24}
