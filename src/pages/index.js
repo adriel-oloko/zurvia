@@ -12,6 +12,14 @@ import { MobileNavSection } from "../components/navComponents";
 
 import { WandSparkles, Zap, ShieldCheck, RefreshCw } from "lucide-react";
 
+import dynamic from "next/dynamic";
+const About = dynamic(() => import("@/components/about"), { ssr: false });
+const FAQs = dynamic(() => import("@/components/faqs"), { ssr: false });
+const Newsletter = dynamic(() => import("@/components/newsletter"), {
+	ssr: false,
+});
+const Footer = dynamic(() => import("@/components/footer"), { ssr: false });
+
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isChildVisible, setIsChildVisible] = useState([false, false, false]);
@@ -19,21 +27,6 @@ export default function Home() {
 	const [isClient, setIsClient] = useState(true);
 
 	const [mobileNav, setMobileNav] = useState(false);
-
-	const faqs = [
-		{
-			question: "What is Zurvia?",
-			answer: "Zurvia is a DeFi finance app that empowers people to live off their DeFi without spending it. Flagship features include Zurvia Borrow and MUSD.",
-		},
-		{
-			question: "What can I do with Zurvia?",
-			answer: "Zurvia builds products to help bring utility to BTC without the need to spend it. You can set up a loan with Zurvia Borrow to mint MUSD which can be spent for a variety of use cases. The vision is to ultimately create and lead the DeFi circular economy, where MUSD can be used for larger purchases such as a home, as well as day-to-day purchases, such as groceries or your daily coffee.",
-		},
-		{
-			question: "Why should i use Zurvia?",
-			answer: "If you want to finally be able to live off your DeFi without spending it, Zurvia is the place for you. By using your DeFi as collateral, you can set up a credit line with Zurvia Borrow benefiting from the lowest interest rates in the industry (1-5%) at a fixed rate. This allows you to access DeFiFi, as well as everyday items that you can find in the Zurvia Market.",
-		},
-	];
 
 	const clickFunc = (index) => {
 		let list = [false, false, false];
@@ -135,6 +128,7 @@ export default function Home() {
 							</div>
 							<div>
 								<button
+									name="Menu Toggle"
 									onClick={() =>
 										mobileNav
 											? setMobileNav(false)
@@ -224,7 +218,7 @@ export default function Home() {
 								className={
 									"font-sans bg-linear-to-r from-white via-black to-white text-transparent bg-clip-text text-4xl lg:text-5xl xl:text-6xl lg:px-24 lg:w-4/5 mx-auto font-bold relative z-10"
 								}>
-								Discover the financial uplifiting power of{" "}
+								Discover the financial uplifiting power of
 								<br />
 								<span className="px-6 py-2 text-white border-solid bg-[#f7931a] backdrop-blur-3xl relative -z-0 mt-0.75 inline-block">
 									Web3.0
@@ -242,7 +236,9 @@ export default function Home() {
 								initial="initial"
 								animate="animate"
 								className="grid grid-cols-2 w-fit gap-2">
-								<button className="bg-black/95 px-4 py-2 rounded-md font-semibold text-white lg:text-lg lg:px-6 hover:bg-black hover:scale-105 hover:shadow shadow-black transition-all">
+								<button
+									name="Explore Zurvia"
+									className="bg-black/95 px-4 py-2 rounded-md font-semibold text-white lg:text-lg lg:px-6 hover:bg-black hover:scale-105 hover:shadow shadow-black transition-all">
 									Explore Zurvia
 								</button>
 								<ConnectButton />
@@ -250,177 +246,7 @@ export default function Home() {
 						</section>
 					</header>
 
-					<motion.section
-						initial={{ y: 60 }}
-						transition={{ type: "spring", bounce: 0.25 }}
-						whileInView={{ y: 0 }}
-						viewport={{ once: true, amount: 0 }}
-						className="bg-white rounded-t-3xl px-6 py-10 lg:py-16 lg:px-8 -mt-6 relative">
-						<motion.p
-							initial={{ y: 60, opacity: 0 }}
-							transition={{ type: "spring", bounce: 0.25 }}
-							whileInView={{ y: 0, opacity: 1 }}
-							viewport={{ once: true, amount: 0.25 }}
-							className="text-default-text text-2xl lg:text-3xl font-medium lg:w-1/2 mx-auto text-center lg:pb-6">
-							Zurvia is the DeFi finance app that empowers you to
-							live off of DeFi, without selling it.
-						</motion.p>
-
-						<div className="flex flex-col gap-6 md:flex-row mt-8 lg:gap-8 h-fit">
-							<div className="flex flex-col gap-6 lg:w-2/3 lg:gap-8">
-								<motion.div
-									initial={{ y: 60, opacity: 0 }}
-									transition={{
-										type: "spring",
-										bounce: 0.25,
-									}}
-									whileInView={{ y: 0, opacity: 1 }}
-									viewport={{ once: true, amount: 0.25 }}
-									className="bg-zurvia-yellow grid lg:grid-cols-2 rounded-2xl">
-									<div className="flex flex-col gap-2 p-6 pt-8 lg:p-12">
-										<h2 className="text-3xl text-default-text font-medium lg:text-4xl font-ibm_plex_sans">
-											Borrow with DeFi
-										</h2>
-										<p className="text-[#944500]">
-											Get a line of credit using your DeFi
-											as collateral. Decentralized,
-											flexible, and intuitive.
-										</p>
-
-										<Link
-											href={"#"}
-											className="text-default-text font-semibold flex gap-2 mt-4">
-											Unlock Credit{" "}
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												height="20px"
-												viewBox="0 -960 960 960"
-												width="20px"
-												fill="#000"
-												className="relative top-0.5">
-												<path d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z" />
-											</svg>
-										</Link>
-									</div>
-									<div
-										id="borrow-graphic-rVBP-6fQ"
-										className="bg-no-repeat bg-cover rounded-b-2xl">
-										<Image
-											src={
-												"/borrow-graphic-rVBP-6fQ.webp"
-											}
-											className="rounded-b-2xl h-full"
-											width={522}
-											height={424}
-											alt=""
-										/>
-									</div>
-								</motion.div>
-
-								<motion.div
-									initial={{ y: 60 }}
-									transition={{
-										type: "spring",
-										bounce: 0.25,
-									}}
-									whileInView={{ y: 0 }}
-									className="bg-[#eff3db] grid lg:grid-cols-2 rounded-2xl">
-									<div className="bg-no-repeat bg-cover rounded-l-2xl hidden lg:block">
-										<Image
-											src={
-												"/growbtc-graphic-BYwcQB4p.webp"
-											}
-											className="rounded-l-2xl h-full"
-											width={522}
-											height={424}
-											alt=""
-										/>
-									</div>
-									<div className="flex flex-col gap-2 p-6 pt-8 lg:p-12">
-										<h2 className="text-3xl text-default-text font-medium lg:text-4xl font-ibm_plex_sans">
-											Grow Your DeFi
-										</h2>
-										<p className="text-[#4D5E0E]">
-											Get a line of credit using your DeFi
-											as collateral. Decentralized,
-											flexible, and intuitive.
-										</p>
-
-										<Link
-											href={"#"}
-											className="text-default-text font-semibold flex gap-2 mt-4">
-											Start Earning{" "}
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												height="20px"
-												viewBox="0 -960 960 960"
-												width="20px"
-												fill="#000"
-												className="relative top-0.5">
-												<path d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z" />
-											</svg>
-										</Link>
-									</div>
-									<div
-										id="growbtc-graphic-BYwcQB4p"
-										className="bg-no-repeat bg-cover rounded-b-2xl lg:hidden">
-										<Image
-											src={
-												"/growbtc-graphic-BYwcQB4p.webp"
-											}
-											className="rounded-b-2xl h-full"
-											width={522}
-											height={424}
-											alt=""
-										/>
-									</div>
-								</motion.div>
-							</div>
-
-							<motion.div
-								initial={{ y: 60 }}
-								transition={{ type: "spring", bounce: 0.25 }}
-								whileInView={{ y: 0 }}
-								className="bg-[#FAE2DF] flex flex-col rounded-2xl lg:w-1/3 h-auto">
-								<div className="flex flex-col gap-2 p-6 pt-8 lg:p-12">
-									<h2 className="text-3xl text-default-text font-medium lg:text-4xl font-ibm_plex_sans">
-										Stability Backed By DeFi
-									</h2>
-									<p className="text-[#6B0036]">
-										Get a line of credit using your DeFi as
-										collateral. Decentralized, flexible, and
-										intuitive.
-									</p>
-
-									<Link
-										href={"#"}
-										className="text-default-text font-semibold flex gap-2 mt-4">
-										Learn More{" "}
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											height="20px"
-											viewBox="0 -960 960 960"
-											width="20px"
-											fill="#000"
-											className="relative top-0.5">
-											<path d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z" />
-										</svg>
-									</Link>
-								</div>
-								<div
-									id="stability-graphic-CaEoUcmV"
-									className="bg-no-repeat bg-cover rounded-b-2xl h-full bg-center">
-									<Image
-										src={"/stability-graphic-CaEoUcmV.webp"}
-										className="rounded-b-2xl h-full"
-										width={504}
-										height={424}
-										alt=""
-									/>
-								</div>
-							</motion.div>
-						</div>
-					</motion.section>
+<About />
 
 					<motion.section
 						initial={{ y: 60 }}
@@ -448,7 +274,7 @@ export default function Home() {
 									width="24px"
 									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-								</svg>{" "}
+								</svg>
 								permissionless
 							</p>
 							<p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
@@ -459,7 +285,7 @@ export default function Home() {
 									width="24px"
 									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-								</svg>{" "}
+								</svg>
 								Bank-free
 							</p>
 							<p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
@@ -470,7 +296,7 @@ export default function Home() {
 									width="24px"
 									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-								</svg>{" "}
+								</svg>
 								Intuitive
 							</p>
 							<p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
@@ -481,7 +307,7 @@ export default function Home() {
 									width="24px"
 									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-								</svg>{" "}
+								</svg>
 								Secure
 							</p>
 							<p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
@@ -492,12 +318,14 @@ export default function Home() {
 									width="24px"
 									fill="#ff004d">
 									<path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-								</svg>{" "}
+								</svg>
 								Decentralized
 							</p>
 						</motion.div>
 
-						<button className="bg-black/95 px-4 py-2 mx-auto w-fit rounded-md font-medium text-white hover:bg-black hover:scale-105 hover:shadow shadow-black transition-all">
+						<button
+							name="Explore Zurvia"
+							className="bg-black/95 px-4 py-2 mx-auto w-fit rounded-md font-medium text-white hover:bg-black hover:scale-105 hover:shadow shadow-black transition-all">
 							Explore Zurvia
 						</button>
 
@@ -650,159 +478,11 @@ export default function Home() {
 						</div>
 					</motion.section>
 
-					<motion.section
-						initial={{ y: 60 }}
-						transition={{ type: "spring", bounce: 0.25 }}
-						whileInView={{ y: 0 }}
-						viewport={{ once: true, amount: 1 }}
-						className="bg-white px-6 lg:pb-60 xl:px-16">
-						<Image
-							src={"/faq-title-CNIoR6mx.svg"}
-							className="scale-110"
-							width={164}
-							height={112}
-							alt=""
-						/>
+					<FAQs />
 
-						<div className="mt-6">
-							{faqs.map((faq, index) => {
-								return (
-									<FaqCards
-										key={index}
-										title={faq["question"]}
-										answer={faq["answer"]}
-										isVisible={index === faqIndex}
-										clickFunc={() => setFaqIndex(index)}
-										fallBackFunc={() => setFaqIndex(null)}
-									/>
-								);
-							})}
-						</div>
-					</motion.section>
+					<Newsletter />
 
-					<motion.section
-						initial={{ y: 30 }}
-						transition={{ type: "spring", bounce: 0.25 }}
-						whileInView={{ y: 0 }}
-						viewport={{ once: true, amount: 1 }}
-						className="bccekOxcUE p-10 pb-0 flex flex-col lg:flex-row-reverse lg:gap-5 lg:pr-20">
-						<div className="flex flex-col gap-6 mb-24 lg:mb-0 lg:justify-end lg:pb-10">
-							<p className="font-ibm_plex_sans font-semibold text-4xl lg:text-[52px]">
-								Shake up your inbox
-							</p>
-							<p className="text-2xl">
-								Your DeFi. Your Future. Your Inbox.
-							</p>
-
-							<div className="text-lg grid lg:grid-cols-2 gap-3 mt-5">
-								<input
-									type="email"
-									className="bg-white p-4 rounded-xl w-full truncate text-ellipsis"
-									placeholder="Your email here..."
-								/>
-								<button className="bg-black p-4 text-center font-semibold text-white w-full rounded-2xl">
-									Subscribe
-								</button>
-							</div>
-						</div>
-
-						<div className="mt-4 lg:w-4/5">
-							<Image
-								src={"/magic-8ball-CcZnWdIZ.png"}
-								className="w-full lg:w-4/5"
-								width={412}
-								height={264}
-								alt=""
-							/>
-						</div>
-					</motion.section>
-
-					<footer className="bg-black p-6 relative z-10 flex flex-col gap-8 w-full lg:p-24 gap-x-40 pb-24 lg:pb-40 pt-10">
-						<motion.div
-							initial={{ y: 60 }}
-							transition={{ type: "spring", bounce: 0.25 }}
-							whileInView={{ y: 0 }}
-							className="flex flex-col lg:flex-row gap-4 lg:gap-x-20 justify-between">
-							<div className="lg:w-1/2 flex flex-col gap-4 lg:gap-8">
-								<Image
-									src={"/logo_bw.svg"}
-									className="w-40 -ml-2"
-									width={83}
-									height={24}
-									alt=""
-								/>
-								<p className="text-lg text-white/80 font-ibm_plex_sans">
-									Zurvia is built by Adriel, as a startup that
-									is dedicated to expanding DeFi with security
-									as top priority. Creator of web3 based,
-									eye-catching and responsive websites.
-								</p>
-								<section className="flex gap-6 items-center">
-									{["x", "discord", "telegram", "reddit"].map(
-										(x) => {
-											return (
-												<Link href={"#"} key={x}>
-													<Image
-														src={`/${x}.svg`}
-														width={24}
-														height={24}
-														alt=""
-													/>
-												</Link>
-											);
-										}
-									)}
-								</section>
-							</div>
-
-							<div className="flex flex-col lg:flex-row gap-x-4 gap-y-8 mt-8 lg:mt-0 lg:w-3/5 justify-between">
-								<FooterSection
-									title={"Company"}
-									children={[
-										{ label: "Careers", href: "#" },
-										{ label: "Contact", href: "#" },
-									]}
-								/>
-								<FooterSection
-									title={"Legal"}
-									children={[
-										{ label: "Privacy Policy", href: "#" },
-										{
-											label: "Terms of Service",
-											href: "#",
-										},
-									]}
-								/>
-								<FooterSection
-									title={"Feedback"}
-									children={[
-										{ label: "Report an Issue", href: "#" },
-									]}
-								/>
-								<FooterSection
-									title={"Resources"}
-									children={[
-										{ label: "Explorer", href: "#" },
-										{ label: "Docs", href: "#" },
-										{ label: "FAQs", href: "#" },
-										{ label: "Blog", href: "#" },
-									]}
-								/>
-							</div>
-						</motion.div>
-
-						<motion.div
-							initial={{ y: 60 }}
-							transition={{ type: "spring", bounce: 0.25 }}
-							whileInView={{ y: 0 }}
-							className="py-8 border-y border-[#3f3f3f] flex justify-between items-center text-lg text-white/80 mt-8">
-							<p className="">© 2025 Zurvia</p>
-							<div className="flex gap-4">
-								<Link href={"#"}>Terms</Link>
-								<Link href={"#"}>Privacy</Link>
-							</div>
-						</motion.div>
-					</footer>
+					<Footer />
 				</>
 			)}
 		</>

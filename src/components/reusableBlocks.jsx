@@ -35,7 +35,7 @@ export function FaqCards ({title, answer, index, clickFunc, isVisible, fallBackF
           viewport={{ once: true, amount: 1 }}
 
         className="">
-            <button type="button" onClick={ faqClickFunc } className="flex justify-between items-center hover:bg-gray-200 focus:bg-gray-100 hover:focus:bg-gray-200 font-ibm_plex_sans px-6 py-8 border-b border-solid border-gray-300 text-black w-full">
+            <button type="button" name={title} onClick={ faqClickFunc } className="flex justify-between items-center hover:bg-gray-200 focus:bg-gray-100 hover:focus:bg-gray-200 font-ibm_plex_sans px-6 py-8 border-b border-solid border-gray-300 text-black w-full">
                 <p className="font-ibm_plex_sans font-semibold lg:text-xl">{ title }</p>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="000" className={`${rotate} transition-all relative top-0.25`}><path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"/></svg>
             </button>
@@ -66,7 +66,7 @@ export function FooterSection ({title, children}) {
             <div className="flex flex-col gap-2 mt-2">
                 { children.map((child, index) => {
                     return (
-                        <Link key={index} href={child.href} className="font-semibold text-lg text-[#626262]">{ child.label }</Link>
+                        <Link key={index} href={child.href} name={child.label} className="font-semibold text-lg text-[#626262]">{ child.label }</Link>
                     )
                 })}
             </div>
