@@ -100,7 +100,6 @@ export function MobileNavSection () {
                                     })} 
                                 </motion.div>}
                             </AnimatePresence>
-                            
                         </div>
                     )
                 }
