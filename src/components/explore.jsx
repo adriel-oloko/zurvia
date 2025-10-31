@@ -1,7 +1,7 @@
-import { motion } from "motion/react"
+import { motion } from 'motion/react'
 
-motion
 export default function Explore() {
+    const text = ['permissionless', 'Bank-free', 'Intuitive', 'Decentralized']
     return (
         <motion.section initial={{ y: 60 }} transition={{ type: 'spring', bounce: 0.25 }} whileInView={{ y: 0 }} className="bg-[#f4f0ed] p-6 lg:py-12 flex flex-col gap-6 items-center">
             <motion.h2 initial={{ y: 30 }} transition={{ type: 'spring', bounce: 0.25 }} whileInView={{ y: 0 }} className="text-[#FF004D] font-ibm_plex_sans font-medium text-3xl lg:text-4xl text-center">
@@ -9,36 +9,16 @@ export default function Explore() {
             </motion.h2>
 
             <motion.div initial={{ y: 30 }} transition={{ type: 'spring', bounce: 0.25 }} whileInView={{ y: 0 }} className="flex flex-wrap items-center justify-center w-full gap-4">
-                <p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff004d">
-                        <path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-                    </svg>
-                    permissionless
-                </p>
-                <p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff004d">
-                        <path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-                    </svg>
-                    Bank-free
-                </p>
-                <p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff004d">
-                        <path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-                    </svg>
-                    Intuitive
-                </p>
-                <p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff004d">
-                        <path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-                    </svg>
-                    Secure
-                </p>
-                <p className="flex gap-2 uppercase font-sans text-gray-500 text-sm items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff004d">
-                        <path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
-                    </svg>
-                    Decentralized
-                </p>
+                {text.map((txt, key) => {
+                    return (
+                        <p key={key} className="flex gap-2 uppercase text-gray-500 text-sm items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff004d">
+                                <path d="m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z" />
+                            </svg>
+                            {txt}
+                        </p>
+                    )
+                })}
             </motion.div>
 
             <button name="Explore Zurvia" className="bg-black/95 px-4 py-2 mx-auto w-fit rounded-md font-medium text-white hover:bg-black hover:scale-105 hover:shadow shadow-black transition-all">

@@ -8,11 +8,8 @@
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
 	--font-inter: var(--font-inter);
 	--font-ibm_plex_sans: var(--font-ibm_plex_sans);
-	--font-funnel_display: var(--font-funnel_display);
 
 	--color-zurvia-yellow: #f8ecd4;
 	--color-primary-red: #ff004d;
