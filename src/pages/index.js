@@ -10,7 +10,7 @@ import { MobileNavSection } from '@/components/navComponents'
 import { WandSparkles, Zap, ShieldCheck, RefreshCw } from 'lucide-react'
 
 import dynamic from 'next/dynamic'
-import { Head } from 'next/head'
+import Head from 'next/head'
 
 const About = dynamic(() => import('@/components/about'), { ssr: false })
 const Explore = dynamic(() => import('@/components/explore'), { ssr: false })
