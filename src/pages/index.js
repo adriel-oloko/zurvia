@@ -50,8 +50,8 @@ export default function Home() {
             animate: {
                 opacity: 1,
                 transition: {
-                    duration: 1,
-                    delay: delay,
+                    //duration: 1,
+                    //delay: delay,
                     ease: 'easeInOut',
                 },
             },
