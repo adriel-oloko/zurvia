@@ -116,7 +116,7 @@ export function MobileNavSection() {
                         <Link
                             key={index}
                             href={children.link}
-                            className="font-semibold text-4xl font-ibm_plex_sans">
+                            className="font-semibold text-3xl font-ibm_plex_sans">
                             {children.label}
                         </Link>
                     )
@@ -132,7 +132,7 @@ export function MobileNavSection() {
                                             ? setVisibleIndex(null)
                                             : setVisibleIndex(index)
                                     }
-                                    className="font-semibold text-4xl font-ibm_plex_sans fill-black text-black focus:text-black/50 focus:fill-black/50 text-left flex items-center">
+                                    className="font-semibold text-3xl font-ibm_plex_sans fill-black text-black focus:text-black/50 focus:fill-black/50 text-left flex items-center">
                                     {children.label}
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"

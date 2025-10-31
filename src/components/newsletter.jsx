@@ -8,7 +8,8 @@ export default function Newsletter() {
 			transition={{ type: "spring", bounce: 0.25 }}
 			whileInView={{ y: 0 }}
 			viewport={{ once: true, amount: 1 }}
-			className="bccekOxcUE p-10 pb-0 flex flex-col lg:flex-row-reverse lg:gap-5 lg:pr-20">
+			className="relative bccekOxcUE p-10 pb-0 flex flex-col lg:flex-row-reverse lg:gap-5 lg:pr-20">
+                <Image src={'/newsletter-background-DO6MO7Jf.webp'} className="object-cover object-bottom absolute inset-0 " fill sizes="100vw" alt="" />
 			<div className="flex flex-col gap-6 mb-24 lg:mb-0 lg:justify-end lg:pb-10">
 				<p className="font-ibm_plex_sans font-semibold text-4xl lg:text-[52px]">
 					Shake up your inbox
