@@ -60,6 +60,9 @@ export default function Home() {
 
     return (
         <>
+            <Head>
+                <title>Zurvia</title>
+            </Head>
             <header className="p-6 min-h-[110vh] bg-no-repeat bg-cover relative flex flex-col justify-center items-center">
                 <Image src={'/gradient-bg-GgcszqHZ.webp'} className="absolute inset-0 min-h-full object-cover" width={1920} height={830} priority quality={85} alt="" />
                 <AnimatePresence>{mobileNav && <MobileNavSection />}</AnimatePresence>
